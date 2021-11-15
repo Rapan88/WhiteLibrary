@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>end_test</title>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/start_page" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">White Library</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/start_page" class="nav-link " aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/test" class="nav-link active">Test</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Book</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Add</a></li>
+            <li class="nav-item"><a href="/dictionary" class="nav-link">Dictionary</a></li>
+        </ul>
+    </header>
+</div>
+<body>
+
+    <div class="end_Test">
+        <span class="textAdd">My congratulations <span th:text="${user.getUsername()}"></span>, you passed this test and got the level</span>
+        <span th:text="${user.getTest_role()}" class="textAdd"></span>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body >
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/start_page" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+            <span class="fs-4">White Library</span>
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href="/start_page" class="nav-link " aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/test" class="nav-link active">Test</a></li>
+            <li class="nav-item"><a href="/dictionary" class="nav-link">Dictionary</a></li>
+        </ul>
+    </header>
+</div>
+<div class="divv">
+    <div class="mainDiv">
+        <form th:action="@{/test_answer}" th:method="post">
+            <div>
+                <span th:text="${sender}"></span>
+            </div>
+            <div>
+                <label>
+                    The opposite of good is _____.
+                    <br>
+                    <input type="text" name="answer1" class="inpp">
+                </label>
+            </div>
+            <div >
+                <label>
+                    The opposite of hot is _____.
+                    <br>
+                    <input type="text" name="answer2" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    The opposite of big is _____.
+                    <br>
+                    <input type="text" name="answer3" class="inpp">
+                </label>
+            </div>
+            <div >
+                <label>
+                    The opposite of close is _____.
+                    <br>
+                    <input type="text" name="answer4" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    The opposite of sad is _____.
+                    <br>
+                    <input type="text" name="answer5" class="inpp">
+                </label>
+            </div>
+            <div >
+                <label>
+                    People can see because they have _____.
+                    <br>
+                    <input type="text" name="answer6" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    People can walk because they have _____.
+                    <br>
+                    <input type="text" name="answer7" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    The colour and the fruit with the same name is _____.
+                    <br>
+                    <input type="text" name="answer8" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Cows give _____. It is white.
+                    <br>
+                    <input type="text" name="answer9" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Potatoes, tomatoes, onions are _____.
+                    <br>
+                    <input type="text" name="answer10" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    My mother’s sister is my _____.
+                    <br>
+                    <input type="text" name="answer11" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    My brother’s son is my _____.
+                    <br>
+                    <input type="text" name="answer12" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    The opposite of interesting is _____.
+                    <br>
+                    <input type="text" name="answer13" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    The opposite of right is _____.
+                    <br>
+                    <input type="text" name="answer14" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    It’s raining. I need to take a/an _____.
+                    <br>
+                    <input type="text" name="answer15" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Why are the windows dirty again? I _____ them yesterday.
+                    <br>
+                    <input type="text" name="answer16" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    I did not have a pen so I _____ with a pencil.
+                    <br>
+                    <input type="text" name="answer17" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    You need to _____ pasta for thirty minutes. Then it is ready to eat.
+                    <br>
+                    <input type="text" name="answer18" class="inpp">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Andy plays tennis really _____.
+                    <br>
+                    <input type="text" name="answer19" class="inpp">
+                </label>
+            </div>
+
+
+            <div class="buttTest">
+                <!--        <input type="hidden" name="_csrf" value="{{_csrf.token}}" />-->
+                <button type="submit" class="button-13">Send</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>
