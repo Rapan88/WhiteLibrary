@@ -6,7 +6,7 @@
     <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<div class="container">
+<div class="container" id="bookRead">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
         <a href="/start_page" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
@@ -15,9 +15,11 @@
 
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/start_page" class="nav-link " aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/start_page_video" class="nav-link">Films</a></li>
             <li class="nav-item"><a href="/test" class="nav-link ">Test</a></li>
             <li class="nav-item"><a href="#" class="nav-link active">Book</a></li>
             <li class="nav-item"><a href="#" class="nav-link addWordPanel">Add</a></li>
+            <li class="nav-item"><a href="#" onclick="speak(window.getSelection())" class="nav-link">Sound</a></li>
             <li class="nav-item"><a href="/dictionary" class="nav-link">Dictionary</a></li>
         </ul>
     </header>
@@ -33,6 +35,7 @@
     <input type="file" name="image" accept="image/*">
     <button class="button-4" role="button">Add word</button>
 </div>
+
 </form>
 
 <hr class="hrBook">
@@ -48,6 +51,15 @@
         </div>
     </div>
 </div>
+<script>
+                    function speak(text) {
+                        const message = new SpeechSynthesisUtterance();
+                        message.lang = "ru-RU";
+                        message.text = text;
+                        window.speechSynthesis.speak(message)
+                    }
+
+                </script>
 <!--<script src="/js/script_acc.js"></script>-->
 <script src="/js/script.js"></script>
 

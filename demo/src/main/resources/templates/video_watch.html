@@ -2,10 +2,9 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>end_test</title>
-    <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-
+    <title>Watch_video</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -17,18 +16,17 @@
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/start_page" class="nav-link " aria-current="page">Home</a></li>
             <li class="nav-item"><a href="/start_page_video" class="nav-link">Films</a></li>
-            <li class="nav-item"><a href="/test" class="nav-link active">Test</a></li>
+            <li class="nav-item"><a href="" class="nav-link active">Film</a></li>
+            <li class="nav-item"><a href="/test" class="nav-link">Test</a></li>
             <li class="nav-item"><a href="/dictionary" class="nav-link">Dictionary</a></li>
         </ul>
     </header>
 </div>
-<body>
-
-    <div class="end_Test">
-        <span class="textAdd">My congratulations <span th:text="${user.getUsername()}"></span>, you passed this test and got the level</span>
-        <span th:text="${user.getTest_role()}" class="textAdd"></span>
-    </div>
-
-
+<body class="videoBlock1">
+<div class="videoBlock1">
+        <video controls height="450" width="600">
+            <source type="video/mp4" th:src="@{'data:video/mp4;base64,'+${video.getVideoContent()}}">
+        </video>
+</div>
 </body>
 </html>

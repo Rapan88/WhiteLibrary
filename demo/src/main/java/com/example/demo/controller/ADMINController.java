@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
 import com.example.demo.models.Book;
+import com.example.demo.models.EngVideo;
 import com.example.demo.models.User;
 import com.example.demo.repo.BookRepo;
+import com.example.demo.repo.VideoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +23,9 @@ public class ADMINController {
 
     @Autowired
     BookRepo bookRepo;
+
+    @Autowired
+    VideoRepo videoRepo;
 
     @Lob
     String string;
@@ -56,6 +61,19 @@ public class ADMINController {
 
         bookRepo.save(book);
 
+        return "redirect:/start_page";
+    }
+
+    @PostMapping("/loadVideo")
+    public String addVideo(Model model,
+                           @RequestParam String videoName,
+                           @RequestParam MultipartFile engVideo,
+                           @RequestParam MultipartFile videoImg) throws IOException{
+        EngVideo video = new EngVideo();
+        video.setVideoName(videoName);
+        video.setVideoContent(Base64.getEncoder().encodeToString(engVideo.getBytes()));
+        video.setVideoImg(Base64.getEncoder().encodeToString(videoImg.getBytes()));
+        videoRepo.save(video);
         return "redirect:/start_page";
     }
 

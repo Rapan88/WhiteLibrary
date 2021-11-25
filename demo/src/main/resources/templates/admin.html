@@ -43,7 +43,6 @@
     <div class="namePost">
         Choose the photo<br>
         <input type="file" name="image" accept="image/*">
-
     </div>
 
     <div class="namePost">
@@ -58,6 +57,26 @@
             English text please: <br>
             <input type="file" name="engText" accept="txt/*">
         </label>
+    </div>
+    <div>
+        <button class="button-13" role="submit">Send</button>
+    </div>
+</form>
+
+<form th:action="@{/loadVideo}" th:method="post" enctype="multipart/form-data" class="form">
+    <div class="namePost">
+        <label>
+            Enter name of video
+            <input type="text" name="videoName" required class="input">
+        </label>
+    </div>
+    <div class="namePost">
+        Choose the photo<br>
+        <input type="file" name="videoImg" accept="image/*">
+    </div>
+    <div class="namePost">
+        Choose the video<br>
+        <input type="file" name="engVideo" accept="video/mp4/*">
     </div>
     <div>
         <button class="button-13" role="submit">Send</button>

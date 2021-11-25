@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>White Library</title>
     <link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
@@ -11,12 +12,23 @@
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
             <span class="fs-4">White Library</span>
         </a>
-
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/start_page" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="/start_page_video" class="nav-link">Films</a></li>
+            <li class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Level</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="/starter">Starter</a>
+                    <a href="/Elementary">Elementary</a>
+                    <a href="/Intermediate">Intermediate</a>
+                    <a href="/Advanced">Advanced</a>
+                    <a href="/start_page">All</a>
+                </div>
+            </li>
             <li class="nav-item"><a href="/test" class="nav-link">Test</a></li>
             <li class="nav-item"><a href="/dictionary" class="nav-link">Dictionary</a></li>
         </ul>
+
     </header>
 </div>
 <body>
@@ -24,9 +36,6 @@
 
 <div class="album py-5 bg-light">
     <div class="container">
-
-
-
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <th:block th:each="book:${books}">
             <div class="col">
@@ -47,14 +56,11 @@
                 </form>
             </div>
             </th:block>
-
         </div>
-
-
     </div>
 </div>
 
-
+<script src="/js/script.js"></script>
 <script th:src="@{/js/bootstrap.min.js}"></script>
 
 </body>

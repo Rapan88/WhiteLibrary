@@ -18,6 +18,9 @@ public class EngVideo {
     private String videoName;
 
     @Lob
+    private String videoImg;
+
+    @Lob
     private String videoContent;
 
 }

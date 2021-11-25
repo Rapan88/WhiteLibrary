@@ -1,11 +1,9 @@
 package com.example.demo.controller;
 
-import com.example.demo.models.Book;
-import com.example.demo.models.Count;
-import com.example.demo.models.User;
-import com.example.demo.models.Word;
+import com.example.demo.models.*;
 import com.example.demo.repo.BookRepo;
 import com.example.demo.repo.UserRepo;
+import com.example.demo.repo.VideoRepo;
 import com.example.demo.repo.WordRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +27,8 @@ public class BookController {
     WordRepo wordRepo;
     @Autowired
     UserRepo userRepo;
+    @Autowired
+    VideoRepo videoRepo;
 
     @PostMapping("/book/{id}")
     public String bookId(Model model,
@@ -52,6 +52,21 @@ public class BookController {
 
     return "book_read";
 }
+
+    @PostMapping("/video/{id}")
+    public String videoId(Model model,@PathVariable String id){
+        long videoId;
+        try {
+            videoId = Long.parseLong(id);
+        }
+        catch (NumberFormatException e){
+            return "exceptionVideo";
+        }
+        EngVideo video = videoRepo.getById(videoId);
+        model.addAttribute("video",video);
+        return "video_watch";
+    }
+
     @PostMapping("/deleteWord/{id}")
     public String deleteWord(Model model,
                              @PathVariable String id,@AuthenticationPrincipal User user){
