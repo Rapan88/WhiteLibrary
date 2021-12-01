@@ -33,9 +33,9 @@ public class StartPageController {
     public String starter(Model model){
         List<Book> bookss = bookRepo.findAll();
         List<Book> books = new ArrayList<>();
-        for (int i=0;i<bookss.size();i++){
-            if(Objects.equals(bookss.get(i).getTest_role(), "Starter")){
-                books.add(bookss.get(i));
+        for (Book book : bookss) {
+            if (Objects.equals(book.getTest_role(), "Starter")) {
+                books.add(book);
             }
         }
         model.addAttribute("books",books);
@@ -45,9 +45,9 @@ public class StartPageController {
     public String elementary(Model model){
         List<Book> bookss = bookRepo.findAll();
         List<Book> books = new ArrayList<>();
-        for (int i=0;i<bookss.size();i++){
-            if(Objects.equals(bookss.get(i).getTest_role(), "Elementary")){
-                books.add(bookss.get(i));
+        for (Book book : bookss) {
+            if (Objects.equals(book.getTest_role(), "Elementary")) {
+                books.add(book);
             }
         }
         model.addAttribute("books",books);
@@ -58,9 +58,9 @@ public class StartPageController {
     public String intermediate(Model model){
         List<Book> bookss = bookRepo.findAll();
         List<Book> books = new ArrayList<>();
-        for (int i=0;i<bookss.size();i++){
-            if(Objects.equals(bookss.get(i).getTest_role(), "Intermediate")){
-                books.add(bookss.get(i));
+        for (Book book : bookss) {
+            if (Objects.equals(book.getTest_role(), "Intermediate")) {
+                books.add(book);
             }
         }
         model.addAttribute("books",books);
@@ -71,9 +71,9 @@ public class StartPageController {
     public String advanced(Model model){
         List<Book> bookss = bookRepo.findAll();
         List<Book> books = new ArrayList<>();
-        for (int i=0;i<bookss.size();i++){
-            if(Objects.equals(bookss.get(i).getTest_role(), "Advanced")){
-                books.add(bookss.get(i));
+        for (Book book : bookss) {
+            if (Objects.equals(book.getTest_role(), "Advanced")) {
+                books.add(book);
             }
         }
         model.addAttribute("books",books);

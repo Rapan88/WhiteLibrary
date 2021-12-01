@@ -6,17 +6,17 @@ import com.example.demo.repo.UserRepo;
 import com.example.demo.repo.VideoRepo;
 import com.example.demo.repo.WordRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.annotation.MultipartConfig;
 import java.io.IOException;
 import java.util.Base64;
-import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -87,9 +87,6 @@ public class BookController {
         words.remove(word);
         user.setWords(words);
         userRepo.save(user);
-//
-//        wordRepo.deleteById(wordId);
-
         return "redirect:/dictionary";
     }
 
@@ -100,9 +97,12 @@ public class BookController {
                           @RequestParam String ukrWord,
                           @RequestParam MultipartFile image,
                           @AuthenticationPrincipal User user) throws IOException {
+        if(user!=null){
+            user = userRepo.getById(user.getId());
+        }
     Word word = new Word(engWord,ukrWord);
     word.setImage(Base64.getEncoder().encodeToString(image.getBytes()));
-    user.getWords().add(word);
+        user.getWords().add(word);
     userRepo.save(user);
     return "redirect:/dictionary";
     }

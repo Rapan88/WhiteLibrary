@@ -12,7 +12,6 @@
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
             <span class="fs-4">White Library</span>
         </a>
-
         <ul class="nav nav-pills">
             <li class="nav-item"><a href="/start_page" class="nav-link " aria-current="page">Home</a></li>
             <li class="nav-item"><a href="/start_page_video" class="nav-link">Films</a></li>
@@ -35,9 +34,7 @@
     <input type="file" name="image" accept="image/*">
     <button class="button-4" role="button">Add word</button>
 </div>
-
 </form>
-
 <hr class="hrBook">
 <div th:each="eng:${arrEng}" class="section">
     <div class="accordion" th:with="mycount=${count.get()}">
@@ -52,17 +49,14 @@
     </div>
 </div>
 <script>
-                    function speak(text) {
-                        const message = new SpeechSynthesisUtterance();
-                        message.lang = "ru-RU";
-                        message.text = text;
-                        window.speechSynthesis.speak(message)
-                    }
-
-                </script>
-<!--<script src="/js/script_acc.js"></script>-->
+function speak(text) {
+    const message = new SpeechSynthesisUtterance();
+    message.lang = "ru-RU";
+    message.text = text;
+    window.speechSynthesis.speak(message)
+}
+</script>
 <script src="/js/script.js"></script>
-
 <script th:src="@{/js/bootstrap.min.js}"></script>
 </body>
 </html>

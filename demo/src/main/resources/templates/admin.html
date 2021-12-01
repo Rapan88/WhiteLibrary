@@ -10,9 +10,6 @@
     White Library
 </div>
 <form th:action="@{/loadbook}" th:method="post" enctype="multipart/form-data" class="form">
-    <!-- <div class="sender">
-        <span th:text="${sender}"></span>
-    </div> -->
     <div class="namePost">
         <label>
             Enter name of post
@@ -26,10 +23,7 @@
         </label>
     </div>
     <div class="namePost">
-
         Enter the range of book<br>
-
-        <!-- <label for="starter">Starter</label> -->
         <label><input name="test_role" type="radio" value="Starter" id="starter">Starter</label>
         <br>
         <label><input name="test_role" type="radio" value="Elementary">Elementary</label>
@@ -37,21 +31,17 @@
         <label><input name="test_role" type="radio" value="Intermediate">Intermediate</label>
         <br>
         <label><input name="test_role" type="radio" value="Advanced">Advanced</label>
-
-
     </div>
     <div class="namePost">
         Choose the photo<br>
         <input type="file" name="image" accept="image/*">
     </div>
-
     <div class="namePost">
         <label>
             Ukrainian text please: <br>
             <input type="file" name="ukrText" accept="txt/*">
         </label>
     </div>
-
     <div class="namePost">
         <label>
             English text please: <br>
@@ -62,7 +52,6 @@
         <button class="button-13" role="submit">Send</button>
     </div>
 </form>
-
 <form th:action="@{/loadVideo}" th:method="post" enctype="multipart/form-data" class="form">
     <div class="namePost">
         <label>
@@ -82,6 +71,5 @@
         <button class="button-13" role="submit">Send</button>
     </div>
 </form>
-
 </body>
 </html>
